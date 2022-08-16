@@ -21,4 +21,10 @@ class PostFactory extends Factory
             'body'  => [],
         ];
     }
+
+    public function untitled(){
+        return $this->state([
+            'title' => 'untitled',
+        ]);
+    }
 }
