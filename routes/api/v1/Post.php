@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 // Route::apiResource('posts', postController::class);
 
-Route::group(['controller' => postController::class, 'middleware' => ['auth'], 'as' => 'posts.'], function () {
+Route::group(['controller' => postController::class, 'as' => 'posts.'], function () {
     Route::get('posts', 'index')->name('index')->withoutMiddleware('auth');
     Route::get('posts/{post}', 'show')->name('show')->withoutMiddleware('auth')->whereNumber('post');
     Route::post('posts', 'store');
